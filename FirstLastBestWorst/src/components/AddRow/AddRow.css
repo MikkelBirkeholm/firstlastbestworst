@@ -1,0 +1,93 @@
+.row {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3rem;
+  opacity: 0.5;
+}
+.row span {
+  font-size: 1.4rem;
+}
+.row > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  border: 1px dashed var(--color-text-alt);
+  border-radius: 1rem;
+  padding: 10px;
+  height: 100%;
+  background-color: rgba(198, 155, 123, 0.3137254902);
+}
+.row > div:has(input[type=text]:-moz-placeholder-shown) {
+  background-color: transparent;
+}
+.row > div:has(input[type=text]:placeholder-shown) {
+  background-color: transparent;
+}
+.row > div:has(input[type=text]:focus-within) {
+  background-color: rgba(198, 155, 123, 0.3137254902);
+}
+.row > div:nth-child(1) {
+  border: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: space-between;
+}
+.row:has(:hover) {
+  opacity: 0.8;
+}
+.row:has(:focus-within) {
+  opacity: 1;
+}
+
+.s-check,
+.a-check {
+  display: grid;
+  place-items: center;
+  justify-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--color-text-alt);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.s-check span,
+.a-check span {
+  font-size: 0.8rem;
+  line-height: 0;
+}
+
+.a-check:has(input[type=checkbox]:checked),
+.s-check:has(input[type=checkbox]:checked) {
+  background-color: var(--color-text-alt);
+  color: var(--color-bg);
+}
+
+::-moz-placeholder {
+  color: var(--color-accent-1);
+}
+
+::placeholder {
+  color: var(--color-accent-1);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.trash {
+  width: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  vertical-align: auto;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0;
+}
