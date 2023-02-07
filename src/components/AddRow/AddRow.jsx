@@ -6,7 +6,7 @@ export default function AddRow() {
 
   function addNewRow() {
     const trashcan = document.createElement('img')
-    trashcan.setAttribute('src', '/src/assets/trash.svg')
+    trashcan.setAttribute('src', 'trash.svg')
     trashcan.classList.add('trash')
     const randomPrompt =
       promptList[Math.floor(Math.random() * promptList.length)].prompts
