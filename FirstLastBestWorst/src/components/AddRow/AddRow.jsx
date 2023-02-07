@@ -8,7 +8,6 @@ export default function AddRow() {
     const trashcan = document.createElement('img')
     trashcan.setAttribute('src', '/src/assets/trash.svg')
     trashcan.classList.add('trash')
-
     const randomPrompt =
       promptList[Math.floor(Math.random() * promptList.length)].prompts
     const newRow = document.createElement('div')
@@ -41,14 +40,13 @@ export default function AddRow() {
         `
     document.getElementById('addRowBtn').before(newRow)
     let trashcans = document.querySelectorAll('.trash')
-    trashcans.forEach((trashcan) => {
-      trashcan.addEventListener('click', (e) => {
-        // show popup with "are you sure?" and "cancel" buttons
-        // if "cancel" is clicked, do nothing
-        // if "are you sure?" is clicked, remove the row
-
-        e.target.parentNode.parentNode.remove()
-      })
+    trashcans.forEach((t) => {
+      t.onclick = (e) => {
+        var result = confirm('Delete this row permanently?')
+        if (result) {
+          e.target.parentNode.parentNode.remove()
+        }
+      }
     })
   }
 
