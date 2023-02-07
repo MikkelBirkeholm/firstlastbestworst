@@ -8,7 +8,6 @@ export default function App() {
     fetchPrompts()
   } else {
     promptList = JSON.parse(localStorage.getItem('promptList'))
-
     console.log('Prompts exists')
   }
 

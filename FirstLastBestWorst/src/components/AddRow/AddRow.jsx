@@ -42,7 +42,7 @@ export default function AddRow() {
     let trashcans = document.querySelectorAll('.trash')
     trashcans.forEach((t) => {
       t.onclick = (e) => {
-        var result = confirm('Delete this row permanently?')
+        let result = confirm('Delete this row permanently?')
         if (result) {
           e.target.parentNode.parentNode.remove()
         }
